@@ -3,7 +3,7 @@
 # include default.pa and override
 .include /usr/local/etc/pulse/default.pa
 
-# chroot
+# jail
 .ifexists module-esound-protocol-unix.so
 load-module module-esound-protocol-unix
 .endif
