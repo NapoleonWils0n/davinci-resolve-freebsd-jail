@@ -434,6 +434,54 @@ sudo service linux start
 -----
 
 *** Ubuntu rc.d script 
+debootstrap has a collection of scripts to install different version of debian and ubuntu
+
+The debootstrap scripts are installed in this location of freebsd
+
+#+begin_example
+/usr/local/share/debootstrap/scripts
+#+end_example
+
+Ubuntu Jammy is the latest version of ubuntu including as a script with debootstrap
+
+However there seems to be a bug with ubuntu jammy installed in a chroot on freebsd
+that sets the permission of a lot of binaries and libraries in the ubuntu chroot to 700
+
+Which means that only the root user can execute the binaries and libaries \\
+so you would have to run GUI applications as root
+
+I copied one of the existing debootstrap files and added the Lunar and Mantic version of Ubuntu to the file
+which we will use later to install Ubuntu Mantic which doesn't have the persmissions bug
+
+Lunar and Mantic script in this repository
+
++ [[file:freebsd/usr/local/share/debootstrap/scripts/lunar][lunar]]
+
++ [[file:freebsd/usr/local/share/debootstrap/scripts/mantic][mantic]]
+
+Path to the lunar script in this repository
+
+#+begin_example
+davinci-resolve-freebsd-jail/freebsd/usr/local/share/debootstrap/scripts/lunar
+#+end_example
+
+Copy the lunar script from the repository to the debootstrap scripts directory
+
+#+begin_src sh
+sudo cp davinci-resolve-freebsd-jail/freebsd/usr/local/share/debootstrap/scripts/lunar /usr/local/share/debootstrap/scripts
+#+end_src
+
+Path to the mantic script in this repository
+
+#+begin_example
+davinci-resolve-freebsd-jail/freebsd/usr/local/share/debootstrap/scripts/mantic
+#+end_example
+
+Copy the mantic script from the repository to the debootstrap scripts directory
+
+#+begin_src sh
+sudo cp davinci-resolve-freebsd-jail/freebsd/usr/local/share/debootstrap/scripts/mantic /usr/local/share/debootstrap/scripts
+#+end_src
 
 Ubuntu script
 
