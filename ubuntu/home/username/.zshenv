@@ -17,7 +17,7 @@ export __NV_PRIME_RENDER_OFFLOAD=1
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
 # export display
-export DISPLAY=:1
+export DISPLAY=:0.0
 
 # qt5
 export QT_QPA_PLATFORMTHEME=qt5ct
