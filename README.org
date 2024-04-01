@@ -47,6 +47,68 @@ git clone https://github.com/NapoleonWils0n/davinci-resolve-freebsd-jail.git
 
 Tree list of the DaVinci Resolve Freebsd git repository
 
+#+begin_example
+.
+├── README.org
+├── assets
+│   ├── apt
+│   │   └── apt-installed.txt
+│   └── screenshot
+│       └── screenshot.png
+├── freebsd
+│   ├── etc
+│   │   └── devfs.rules
+│   ├── home
+│   │   └── username
+│   │       ├── .config
+│   │       │   └── pulse
+│   │       │       ├── .config
+│   │       │       │   └── pulse
+│   │       │       └── default.pa
+│   │       └── .local
+│   │           └── share
+│   │               └── applications
+│   │                   └── davinci-resolve.desktop
+│   └── usr
+│       └── local
+│           ├── bin
+│           │   └── resolve
+│           ├── etc
+│           │   ├── doas.conf
+│           │   └── rc.d
+│           │       └── ubuntu
+│           └── share
+│               └── debootstrap
+│                   └── scripts
+│                       ├── lunar
+│                       └── mantic
+└── ubuntu
+    ├── etc
+    │   ├── apt
+    │   │   └── sources.list
+    │   ├── default
+    │   │   └── locale
+    │   ├── fstab
+    │   └── modprobe.d
+    │       └── blacklist-nvidia-nouveau.conf
+    ├── home
+    │   └── username
+    │       ├── .config
+    │       │   ├── gpu
+    │       │   │   └── dummy-uvm.so
+    │       │   └── pulse
+    │       │       └── client.conf
+    │       ├── .zshenv
+    │       └── .zshrc
+    └── usr
+        └── local
+            └── bin
+                └── wrapper-resolve
+
+36 directories, 20 files
+
+#+end_example
+
 # Horizontal Rule
 -----
 
