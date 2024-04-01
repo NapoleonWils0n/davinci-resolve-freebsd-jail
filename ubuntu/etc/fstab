@@ -1,0 +1,8 @@
+# fstab
+devfs           /usr/local/jails/linux/ubuntu/dev      devfs           rw                      0       0
+tmpfs           /usr/local/jails/linux/ubuntu/dev/shm  tmpfs           rw,size=1g,mode=1777    0       0
+fdescfs         /usr/local/jails/linux/ubuntu/dev/fd   fdescfs         rw,linrdlnk             0       0
+linprocfs       /usr/local/jails/linux/ubuntu/proc     linprocfs       rw                      0       0
+linsysfs        /usr/local/jails/linux/ubuntu/sys      linsysfs        rw                      0       0
+/tmp            /usr/local/jails/linux/ubuntu/tmp      nullfs          rw                      0       0
+/home           /usr/local/jails/linux/ubuntu/home     nullfs          rw                      0       0
