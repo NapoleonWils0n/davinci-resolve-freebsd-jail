@@ -57,7 +57,10 @@ Tree list of the DaVinci Resolve Freebsd git repository
 │       └── screenshot.png
 ├── freebsd
 │   ├── etc
-│   │   └── devfs.rules
+│   │   ├── devfs.rules
+│   │   ├── jail.conf
+│   │   └── jail.conf.d
+│   │       └── ubuntu.conf
 │   ├── home
 │   │   └── username
 │   │       ├── .config
@@ -74,9 +77,7 @@ Tree list of the DaVinci Resolve Freebsd git repository
 │           ├── bin
 │           │   └── resolve
 │           ├── etc
-│           │   ├── doas.conf
-│           │   └── rc.d
-│           │       └── ubuntu
+│           │   └── doas.conf
 │           └── share
 │               └── debootstrap
 │                   └── scripts
@@ -105,8 +106,7 @@ Tree list of the DaVinci Resolve Freebsd git repository
             └── bin
                 └── wrapper-resolve
 
-36 directories, 20 files
-
+36 directories, 21 files
 #+end_example
 
 # Horizontal Rule
