@@ -202,6 +202,8 @@ permit nopass keepenv root as root
 /etc/devfs.rules
 #+end_example
 
++ [[file:freebsd/etc/devfs.rules][devfs.rules]]
+
 #+begin_src conf
 [ubuntu_jail=7]
 add include $devfsrules_hide_all
