@@ -1474,7 +1474,7 @@ sudo chmod 700 /var/run/user/"$(id -u)"
 
 We need to set some enviormental variables in our shell config
 
-+ [[file:compat/ubuntu/home/username/.zshrc][zshrc]]
++ [[file:ubuntu/home/username/.zshrc][zshrc]]
 
 Copy the zshrc config from this reposiory to the jail
 
@@ -1482,7 +1482,7 @@ Copy the zshrc config from this reposiory to the jail
 cp davinci-resolve-freebsd-jail/ubuntu/home/username/.zshrc /usr/local/jails/linux/ubuntu/home/"${USER}"
 #+end_src
 
-+ [[file:compat/ubuntu/home/username/.zshenv][zshenv]]
++ [[file:ubuntu/home/username/.zshenv][zshenv]]
 
 Copy the zshenv config from this reposiory to the jail
 
