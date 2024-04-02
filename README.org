@@ -430,6 +430,20 @@ start linux
 sudo service linux start
 #+end_src
 
+**** fstab add proc
+
+edit your fstab and add proc
+
+#+begin_example
+/etc/fstab
+#+end_example
+
+fstab
+
+#+begin_src conf
+proc            /proc                   procfs          rw      0       0
+#+end_src
+
 # Horizontal Rule
 -----
 
