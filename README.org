@@ -1113,8 +1113,10 @@ Edit the apt sources.list and add more repositories \\
 Freebsd path to the sources.list in the jail
 
 #+begin_example
-/compat/ubuntu/etc/apt/sources.list
+/usr/local/jails/linux/ubuntu/etc/apt/sources.list
 #+end_example
+
++ [[file:ubuntu/etc/apt/sources.list][sources.list]]
 
 Path to the sources.list in the jail
 
