@@ -1033,6 +1033,8 @@ sudo pwd_mkdb -d ./ -p master.passwd
 
 *** ubuntu jail fstab
 
++ [[file:ubuntu/etc/fstab][fstab]]
+
 #+begin_example
 /usr/local/jails/linux/ubuntu/etc/fstab
 #+end_example
