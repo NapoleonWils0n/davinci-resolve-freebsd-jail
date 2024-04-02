@@ -1414,6 +1414,33 @@ sudo apt install ffmpeg
 # Horizontal Rule
 -----
 
+*** Nvidia download
+
+Download the linux version matching the version on the freebsd host \\
+the version must match exactly or it won't work
+
+[[https://www.nvidia.com/Download/Find.aspx?lang=en-us]]
+
+Download link for 535.146.02 
+
+[[https://www.nvidia.com/download/driverResults.aspx/216728/en-us/]]
+
+# Horizontal Rule
+-----
+
+*** Copy the nvidia run file in the jail home direcory
+
+Change into the directory you download the nvidia drivers into on the freebsd host
+
+then copy the nvidia run file into the home directory in the chroot
+
+#+begin_src sh
+cp -rv NVIDIA-Linux-x86_64-535.146.02.run /usr/local/jails/linux/ubuntu/home/"${USER}"
+#+end_src
+
+# Horizontal Rule
+-----
+
 *** Nvidia driver install
 
 chmod the Nvidia run file
