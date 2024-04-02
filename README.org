@@ -444,8 +444,8 @@ The debootstrap scripts are installed in this location of freebsd
 
 Ubuntu Jammy is the latest version of ubuntu including as a script with debootstrap
 
-However there seems to be a bug with ubuntu jammy installed in a chroot on freebsd
-that sets the permission of a lot of binaries and libraries in the ubuntu chroot to 700
+However there seems to be a bug with ubuntu jammy installed in a jail on freebsd
+that sets the permission of a lot of binaries and libraries in the ubuntu jail to 700
 
 Which means that only the root user can execute the binaries and libaries \\
 so you would have to run GUI applications as root
