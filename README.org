@@ -914,12 +914,18 @@ sudo debootstrap --arch=amd64 --no-check-gpg mantic /usr/local/jails/linux/ubunt
 cd /usr/local/jails/linux/ubuntu/etc
 #+end_src
 
+switch to root
+
 #+begin_src sh
-sudo cat passwd | sed -r 's/(:[x|*]:)([0-9]+:[0-9]+:)/:*:\2:0:0:/g' > master.passwd
+su -m
 #+end_src
 
 #+begin_src sh
-sudo pwd_mkdb -d ./ -p master.passwd
+cat passwd | sed -r 's/(:[x|*]:)([0-9]+:[0-9]+:)/:*:\2:0:0:/g' > master.passwd
+#+end_src
+
+#+begin_src sh
+pwd_mkdb -d ./ -p master.passwd
 #+end_src
 
 *** ubuntu jail fstab
@@ -1253,7 +1259,7 @@ chown username:username username
 
 *** Couldnt resolve hostname fix
 
-Add the your hostname from freebsd to the hosts file in the ubuntu jail \\
+Add the your hostname from the jail to the hosts file in the ubuntu jail \\
 to stop errors when using sudo saying couldnt resolve hostname
 
 Path to the hosts in the jail
@@ -1402,19 +1408,16 @@ sudo update-initramfs -u
 # Horizontal Rule
 -----
 
-*** Wayland install
-**** Wayland packages
-
-Install some wayland packages and the wlroot compositor
+*** qt5ct
 
 #+begin_src sh
-sudo apt install libinput-tools wayland-protocols libwlroots11 libwlroots-dev libxkbcommon0 qtwayland5 qt6-wayland wayland-utils adwaita-qt qt5ct
+sudo apt install qt5ct
 #+end_src
 
 # Horizontal Rule
 -----
 
-**** Create the XDG_RUNTIME_DIR directory in the jail
+*** Create the XDG_RUNTIME_DIR directory in the jail
 
 #+begin_src sh
 sudo mkdir -p /var/run/user/"$(id -u)"
@@ -1430,6 +1433,18 @@ Chmod the directory
 
 #+begin_src sh
 sudo chmod 700 /var/run/user/"$(id -u)"
+#+end_src
+
+# Horizontal Rule
+-----
+
+*** Wayland install
+**** Wayland packages
+
+Install some wayland packages and the wlroot compositor
+
+#+begin_src sh
+sudo apt install libinput-tools wayland-protocols libwlroots11 libwlroots-dev libxkbcommon0 qtwayland5 qt6-wayland wayland-utils adwaita-qt
 #+end_src
 
 # Horizontal Rule
@@ -1564,7 +1579,7 @@ sudo apt install xorg xserver-xorg xserver-xorg-core
 Install fakeroot and xorriso for makeresolvedeb
 
 #+begin_src sh
-sudo apt install fakeroot xorriso
+sudo apt install fakeroot xorriso 
 #+end_src
 
 # Horizontal Rule
