@@ -1305,6 +1305,17 @@ sudo apt install ffmpeg
 # Horizontal Rule
 -----
 
+*** Nvidia install using the Ubuntu repo
+
+Freebsd 14 p.6 quarterly branch Nvidia driver version is 550.54.14 \\
+which matches the extact version on Ubuntu Mantic
+
+So rather than downloading and manually installing the Nvidia driver you can install it from the Ubuntu repo
+
+#+begin_src sh
+sudo apt install nvidia-driver-550-server
+#+end_src
+
 *** Nvidia download
 
 Download the linux version matching the version on the freebsd host \\
