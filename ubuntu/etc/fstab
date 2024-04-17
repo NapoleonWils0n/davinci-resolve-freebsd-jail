@@ -6,3 +6,5 @@ linprocfs       /usr/local/jails/linux/ubuntu/proc     linprocfs       rw       
 linsysfs        /usr/local/jails/linux/ubuntu/sys      linsysfs        rw                      0       0
 /tmp            /usr/local/jails/linux/ubuntu/tmp      nullfs          rw                      0       0
 /home           /usr/local/jails/linux/ubuntu/home     nullfs          rw                      0       0
+# uncomment the line below for the xdg runtime directory for wayland
+#/var/run/user/1001 /usr/local/jails/linux/ubuntu/run/user/1001  nullfs rw                      0       0
