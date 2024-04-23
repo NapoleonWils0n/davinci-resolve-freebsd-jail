@@ -43,8 +43,7 @@ shift $((OPTIND-1))
 
 
 #===============================================================================
-# switch to our user in the choot and start resolve
+# switch to our user in the jail and start resolve
 #===============================================================================
 
-# change username below to the name of the user in the chroot
 su "${username}" -c '/opt/resolve/bin/resolve' 2>/dev/null

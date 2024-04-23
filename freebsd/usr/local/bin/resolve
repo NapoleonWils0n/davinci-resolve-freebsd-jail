@@ -1,22 +1,10 @@
 #!/bin/sh
 
 # resolve
-
-# Freebsd script to launch Davinci Resolve from a Linuxulator chroot
-# the window is displayed on Freebsd using either Xwayland or Xephyr
-# and the audio is routed over a pulseaudio socker from the chroot to the host
+# Freebsd script to launch Davinci Resolve from a Linux Jail
 
 # start pulseaudio
 pulseaudio --start --daemonize 2>/dev/null
 
-# Note if you are using X11 on Freebsd comment out the Xwayland line
-# and uncomment the Xephyr line
-
-# Wayland - create the Xwayland window to display Davinci Resolve
-Xwayland -host-grab -geometry 1920x1080 :01 &
-
-# X11 - create the Xwayland window to display Davinci Resolve
-# Xephyr -ac -noreset -br -resizeable -screen 1920x1080 -ac :1 &
-
-# doas chroot into ubuntu run run the wrapper script to start resolve
-doas chroot /compat/ubuntu /usr/local/bin/wrapper-resolve -u "${USER}"
+# doas jexec into ubuntu and run the wrapper script to start resolve
+doas jexec ubuntu /usr/local/bin/wrapper-resolve -u "${USER}"

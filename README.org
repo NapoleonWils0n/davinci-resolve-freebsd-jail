@@ -1335,6 +1335,10 @@ Download link for 535.146.02
 
 [[https://www.nvidia.com/download/driverResults.aspx/216728/en-us/]]
 
+Download link for 550.54.14
+
+[[https://www.nvidia.com/download/driverResults.aspx/218826/en-us/]]
+
 # Horizontal Rule
 -----
 
@@ -1356,13 +1360,13 @@ cp -rv NVIDIA-Linux-x86_64-535.146.02.run /usr/local/jails/linux/ubuntu/home/"${
 chmod the Nvidia run file
 
 #+begin_src sh
-chmod +x NVIDIA-Linux-x86_64-535.146.02.run
+chmod +x NVIDIA-Linux-x86_64-550.54.14.run
 #+end_src
 
 Install the Nvidia driver
 
 #+begin_src sh
-sudo ./NVIDIA-Linux-x86_64-535.146.02.run --install-compat32-libs --no-nvidia-modprobe --no-backup --no-kernel-module --no-x-check --no-nouveau-check --no-cc-version-check --no-kernel-module-source --no-check-for-alternate-installs --install-libglvnd --skip-depmod --no-systemd
+sudo ./NVIDIA-Linux-x86_64-550.54.14.run --install-compat32-libs --no-nvidia-modprobe --no-backup --no-kernel-module --no-x-check --no-nouveau-check --no-cc-version-check --no-kernel-module-source --no-check-for-alternate-installs --install-libglvnd --skip-depmod --no-systemd
 #+end_src
 
 # Horizontal Rule
@@ -1419,12 +1423,7 @@ sudo apt install qt5ct
 # Horizontal Rule
 -----
 
-*** X11
-
-Davinci Resolve 18.6 \\
-
-Note this section is for running Davinci Resolve as an X11 application \\
-skip this step if you are running resolve as a wayland application
+*** Create the XDG_RUNTIME_DIR directory
 
 Create the XDG_RUNTIME_DIR directory in the jail
 
@@ -1942,7 +1941,6 @@ shift $((OPTIND-1))
 # switch to our user in the jail and start resolve
 #===============================================================================
 
-# change username below to the name of the user in the jail
 su "${username}" -c '/opt/resolve/bin/resolve' 2>/dev/null
 #+end_src
 
