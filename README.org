@@ -221,14 +221,10 @@ after adding the devfs rules reboot
 
 *** jail config
 
-To start jails when the system boots
-
 enable jails
 
 #+begin_src sh
 sudo sysrc jail_enable="YES"
-sudo sysrc jail_parallel_start="YES"
-sudo sysrc jail_list="ubuntu"
 sudo sysrc cloned_interfaces="lo1"
 sudo sysrc ifconfig_lo1_aliases="inet 10.10.0.1-12/24"
 #+end_src
@@ -239,13 +235,9 @@ sudo sysrc ifconfig_lo1_aliases="inet 10.10.0.1-12/24"
 
 #+begin_src conf
 jail_enable="YES"
-jail_parallel_start="YES"
-jail_list="ubuntu"
 cloned_interfaces="lo1"
 ifconfig_lo1_aliases="inet 10.10.0.1-12/24"
 #+end_src
-
-With jail_parallel_start, all configured jails will be started in the background.
 
 **** Setting Up the Jail Directory Tree
 ***** zroot/jails
@@ -2052,82 +2044,10 @@ Categories=AudioVideo
 # Horizontal Rule
 -----
 
-** Mount the video directory
+** start the jail
 
-Allow your user to run the mount command without sudo
-
-You can set this using sysctl
+you need to start the jail before you can use it
 
 #+begin_src sh
-sudo sysctl vfs.usermount=1
+doas service jail onestart ubuntu
 #+end_src
-
-or by editing your sysctl.conf
-
-#+begin_example
-/etc/sysctl.conf
-#+end_example
-
-and setting the following option
-
-#+begin_src conf
-vfs.usermount=1
-#+end_src
-
-Mount the Video directory from the Freebsd host inside the home directory in the jail, \\
-this allows us to access the Video on directory on the Freebsd host from within the jail with Davinci Resolve
-
-That means we can import and export footage from Davinci Resolve from the Video directory on the Freebsd, \\
-rather than copying files from the host to the jail
-
-Create a mount point in the jail to mount the Video directory from the host in the jail
-
-These commands are run as your regular user and not as root \\
-
-#+begin_src sh
-mkdir -p /usr/local/jails/linux/ubuntu/home/"${USER}"/video
-#+end_src
-
-Mount the video directory from the Freebsd host to the Video directory in the jail
-
-#+begin_src sh
-mount -t nullfs /home/"${USER}"/video /usr/local/jails/linux/ubuntu/home/"${USER}"/video
-#+end_src
-
-umount video
-
-#+begin_src sh
-umount  /usr/local/jails/linux/ubuntu/home/"${USER}"/video
-#+end_src
-
-Edit your fstab on the Freebsd host and set the mount point
-
-#+begin_example
-/etc/fstab
-#+end_example
-
-+ fstab code
-
-#+begin_src conf
-# mount the video directory from the host to the jail,
-# change username to your username
-/home/username/video           /usr/local/jails/linux/ubuntu/home/username/video     nullfs          rw,noauto                      0       0
-#+end_src
-
-We use the noauto option in the fstab otherwise the nullfs mount will be mounted before the zfs dataset \\
-so you need to manually mount the video directory after you log in
-
-Mount the video directory in the jail
-
-#+begin_src sh
-mount /usr/local/jails/linux/ubuntu/home/"${USER}"/video
-#+end_src
-
-Unmount the video directory in the jail
-
-#+begin_src sh
-umount /usr/local/jails/linux/ubuntu/home/"${USER}"/video
-#+end_src
-
-# horizontal rule
------
