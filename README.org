@@ -1195,7 +1195,6 @@ usermod -a -G pulse username
 usermod -a -G pulse-access username
 #+end_src
 
-
 edit the jails group file
 
 #+begin_example
