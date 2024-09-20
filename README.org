@@ -1775,13 +1775,13 @@ sudo apt install liblog4cxx-dev
 *** DaVinci Resolve deb install
 
 #+begin_src sh
-sudo dpkg -i davinci-resolve_19.0-mrd1.7.2_amd64.deb 
+sudo dpkg -i davinci-resolve_19.0.1-mrd1.7.2_amd64.deb 
 #+end_src
 
 or
 
 #+begin_src sh
-sudo apt install davinci-resolve_19.0-mrd1.7.2_amd64.deb
+sudo apt install davinci-resolve_19.0.1-mrd1.7.2_amd64.deb
 #+end_src
 
 # Horizontal Rule
