@@ -1758,7 +1758,7 @@ tar zxvf makeresolvedeb_1.7.2_multi.sh.tar.gz
 then run makeresolvedeb
 
 #+begin_src sh
-./makeresolvedeb_1.7.2_multi.sh DaVinci_Resolve_19.0_Linux.run
+./makeresolvedeb_1.7.2_multi.sh DaVinci_Resolve_19.0.1_Linux.run
 #+end_src
 
 This may take about an hour
