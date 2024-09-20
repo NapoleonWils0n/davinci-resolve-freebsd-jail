@@ -1576,41 +1576,6 @@ Instead of the full path to open Davinci Resolve in the jail
 /opt/resolve/bin/resolve
 #+end_example
 
-Export the XDG directories \\
-remember to create the XDG_RUNTIME_DIR directory
-
-LD_PRELOAD is used to load the so file
-
-#+begin_src conf
-export LD_PRELOAD="$HOME/.config/gpu/dummy-uvm.so"
-#+end_src
-
-You need to export some variables for Nvidia \\
-otherwise you won't be able to drag a clip into the tim and you will get a error saying gpu is full
-
-#+begin_src conf
-export __NV_PRIME_RENDER_OFFLOAD=1
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-#+end_src
-
-X11 - Export DISPLAY so application use the Xwayland window on the host
-
-#+begin_src conf
-# x11 - comment out to use wayland
-export DISPLAY=unix:0
-export QT_QPA_PLATFORM=xcb
-export GDK_BACKEND=x11
-#+end_src
-
-Wayland
-
-#+begin_src conf
-# wayland - uncomment to use wayland
-export WAYLAND_DISPLAY=wayland-0
-export QT_QPA_PLATFORM=wayland
-export GDK_BACKEND=wayland
-#+end_src
-
 + ~/.zshenv code
 
 #+begin_src conf
@@ -1646,8 +1611,7 @@ case "$OSTYPE" in
   export XDG_RUNTIME_DIR="/run/user/`id -u`"
 
   # dummy-uvm.so for access to the gpu
-  #export LD_PRELOAD="$HOME/.config/gpu/dummy-uvm.so"
-  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0:/usr/lib/x86_64-linux-gnu/libgio-2.0.so:/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so
   export __NV_PRIME_RENDER_OFFLOAD=1
   export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
@@ -1786,15 +1750,6 @@ sudo apt install davinci-resolve_19.0.1-mrd1.7.2_amd64.deb
 
 # Horizontal Rule
 -----
-
-*** DaVinci Resolve libs fix
-
-#+begin_src sh
-cd /opt/resolve/libs
-sudo mkdir not_used
-sudo mv libgio* not_used
-sudo mv libgmodule* not_used
-#+end_src
 
 ** Pulseaudio set up 
 *** Freebsd

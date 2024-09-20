@@ -30,8 +30,7 @@ case "$OSTYPE" in
   export XDG_RUNTIME_DIR="/run/user/`id -u`"
 
   # dummy-uvm.so for access to the gpu
-  #export LD_PRELOAD="$HOME/.config/gpu/dummy-uvm.so"
-  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0:/usr/lib/x86_64-linux-gnu/libgio-2.0.so:/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so
   export __NV_PRIME_RENDER_OFFLOAD=1
   export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
