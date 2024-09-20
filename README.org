@@ -1498,7 +1498,7 @@ sudo mkdir -p /etc/modprobe.d
 Copy the blacklist-nvidia-nouveau.conf file from the repository to the jail
 
 #+begin_example
-/etc/modprobe.d/blacklist-nvidia-nouveau.conf
+sudo vi /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 #+end_example
 
 + blacklist-nvidia-nouveau.conf code
