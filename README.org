@@ -1195,6 +1195,20 @@ usermod -a -G pulse username
 usermod -a -G pulse-access username
 #+end_src
 
+
+edit the jails group file
+
+#+begin_example
+vi /etc/group
+#+end_example
+
+comment out the root entry and create a new wheel entry, replace username with your username
+
+#+begin_src conf
+wheel:*:0:root,username
+#root:x:0:
+#+end_src
+
 # Horizontal Rule
 -----
 
@@ -1250,13 +1264,21 @@ to stop errors when using sudo saying couldnt resolve hostname
 Path to the hosts in the jail
 
 #+begin_example
-/etc/hosts
+vi /etc/hosts
 #+end_example
 
 hosts
 
 #+begin_src conf
 127.0.0.1       hostname
+#+end_src
+
+#+begin_src conf
+127.0.0.1       localhost
+127.0.0.1       ubuntu
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
 #+end_src
 
 # Horizontal Rule
