@@ -14,7 +14,14 @@ Audio routed from the jail to the host using a pulseaudio socket for zero latenc
 Video directory from the Freebsd host mounted inside the home directory in the jail
 
 Opened using a Desktop entry on Freebsd 
+
 #+end_quote
+
+Note: you may need to adjust the Render speed,
+which can be found in the Render page in the file tab 
+
+the default Render speed is set to maximum,
+you may need to drop the value down to 10 depending on the amount of ram on your system
 
 [[assets/screenshot/screenshot.png]]
 
