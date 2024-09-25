@@ -1,7 +1,7 @@
 case $ARCH in
   amd64|i386)
 	case $SUITE in
-	  gutsy|hardy|intrepid|jaunty|karmic|lucid|lunar|mantic|maverick|natty|oneiric|precise|quantal|raring|saucy|utopic|vivid|wily|yakkety|zesty)
+	  gutsy|hardy|intrepid|jaunty|karmic|lucid|lunar|maverick|natty|oneiric|precise|quantal|raring|saucy|utopic|vivid|wily|yakkety|zesty)
 	default_mirror http://old-releases.ubuntu.com/ubuntu
 	  ;;
 	  *)
