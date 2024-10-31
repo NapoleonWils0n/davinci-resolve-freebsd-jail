@@ -212,10 +212,8 @@ permit nopass keepenv root as root
 + [[file:freebsd/etc/devfs.rules][devfs.rules]]
 
 #+begin_src conf
-[ubuntu_jail=7]
-add include $devfsrules_hide_all
-add include $devfsrules_unhide_basic
-add include $devfsrules_unhide_login
+[jail=7]
+add include $devfsrules_jail
 add path 'mixer*' unhide
 add path 'dsp*' unhide
 add path 'dri*' unhide
