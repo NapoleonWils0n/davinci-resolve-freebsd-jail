@@ -15,24 +15,17 @@ case "$OSTYPE" in
   export WAYLAND_DISPLAY=wayland-0
   export QT_QPA_PLATFORM=wayland
   export GDK_BACKEND=wayland
-
-  # x11 - comment out to use wayland
-  #export DISPLAY=unix:0
-  #export QT_QPA_PLATFORM=xcb
-  #export GDK_BACKEND=x11
   ;;
   linux*)
   typeset -U PATH path
-  path=("/opt/resolve/bin" "$path[@]")
+  path=("/opt/resolve/bin" "/bin" "/usr/bin" "$path[@]")
   export PATH
 
   # XDG_RUNTIME_DIR
   export XDG_RUNTIME_DIR="/run/user/`id -u`"
 
   # dummy-uvm.so for access to the gpu
-  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0:/usr/lib/x86_64-linux-gnu/libgio-2.0.so:/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so
-  export __NV_PRIME_RENDER_OFFLOAD=1
-  export __GLX_VENDOR_LIBRARY_NAME=nvidia
+  export LD_PRELOAD="${HOME}"/.config/gpu/dummy-uvm.so
 
   # wayland - uncomment to use wayland
   #export WAYLAND_DISPLAY=wayland-0
@@ -40,7 +33,7 @@ case "$OSTYPE" in
   #export GDK_BACKEND=wayland
 
   # x11 - comment out to use wayland
-  export DISPLAY=unix:0
+  export DISPLAY=:0
   export QT_QPA_PLATFORM=xcb
   export GDK_BACKEND=x11
   ;;

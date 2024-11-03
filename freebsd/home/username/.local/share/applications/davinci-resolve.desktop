@@ -3,7 +3,7 @@ Version=1.0
 Encoding=UTF-8
 Type=Application
 Name=DaVinci Resolve
-Exec=/usr/local/bin/resolve
+Exec=/home/djwilcox/bin/wrapper-freebsd -j 'ubuntu' -a 'export __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia; resolve' -p 'on'
 Icon=/usr/local/jails/linux/ubuntu/opt/resolve/graphics/DV_Resolve.png
 Terminal=false
 MimeType=application/x-resolveproj;

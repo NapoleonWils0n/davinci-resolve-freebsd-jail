@@ -1,3 +1,0 @@
-deb [trusted=yes] http://archive.ubuntu.com/ubuntu/ mantic main restricted universe multiverse
-deb [trusted=yes] http://archive.ubuntu.com/ubuntu/ mantic-updates main restricted universe multiverse
-deb [trusted=yes] http://archive.ubuntu.com/ubuntu/ mantic-security main restricted universe multiverse
