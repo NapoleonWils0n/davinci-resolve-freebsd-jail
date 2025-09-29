@@ -1050,12 +1050,10 @@ sudo usermod -a -G pulse username
 sudo usermod -a -G pulse-access username
 #+end_src
 
-*** Nvidia-cuda-toolkit
-
-Install the nvidia-cuda-toolkit
+*** other packages to install
 
 #+begin_src sh
-sudo apt install nvidia-cuda-toolkit ocl-icd-opencl-dev libglu1-mesa libfuse2 initramfs-tools
+sudo apt install ocl-icd-opencl-dev libglu1-mesa libfuse2 initramfs-tools
 #+end_src
 
 # Horizontal Rule
